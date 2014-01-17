@@ -24,7 +24,7 @@ module.exports = function (grunt) {
             progressive: true
         });
 
-        async.forEachLimit(this.files, os.cpus().length, function (file, next) {
+        async.forEachLimit(this.files, os.cpus().length-1, function (file, next) {
             imagemin(file.src[0], file.dest, options, function (err, data) {
                 var msg;
 
