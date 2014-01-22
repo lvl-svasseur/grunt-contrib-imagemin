@@ -26,6 +26,8 @@ module.exports = function (grunt) {
 
         async.forEachLimit(this.files, os.cpus().length-1, function (file, next) {
             imagemin(file.src[0], file.dest, options, function (err, data) {
+                grunt.log.writeln(" \xF0\x9F\x8D\xBA 💩 🌷 ");
+
                 var msg;
 
                 if (err) {
